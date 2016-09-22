@@ -15,18 +15,17 @@
 			function doTheThing() {
 				// Uncomment this to remove the ?_={timestamp} that jQuery will append
 				// $.ajaxSetup({cache: true});
+				$.ajax({ 
+					method: "GET", 
+					url: "doesnt-exist.js",
+					cache: true 
+				});
 				$.ajax({
 					url: 'https://gist.githubusercontent.com/PureForm/0186fd908c55602eca19a4fc104cc941/raw/19b51ed24918b1bfb577fe1148c1ab6e56b751f9/html_with_script_tag_in_it.html',
 					success: function(data) {
 						// This will cause jQuery to look for <script> tags in data and insert the into DOM.
 						$('#the-thing').html(data);
 					}
-				});
-				$.ajax({ 
-					method: "GET", 
-					url: "doesnt-exist.js",
-					cache: true 
-					
 				});
 			}
 		</script>
