@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Test thingy</title>
+		<link rel="stylesheet" type="text/css" href="index.css">
+	</head>
+
+	<body>
+		<button onclick="doTheThing();">Do the thing</button>
+		<div id="the-thing"></div>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+			function doTheThing() {
+				// Uncomment this to remove the ?_={timestamp} that jQuery will append
+				// $.ajaxSetup({cache: true});
+				$.ajax({
+					url: 'https://gist.githubusercontent.com/PureForm/0186fd908c55602eca19a4fc104cc941/raw/19b51ed24918b1bfb577fe1148c1ab6e56b751f9/html_with_script_tag_in_it.html',
+					success: function(data) {
+						// This will cause jQuery to look for <script> tags in data and insert the into DOM.
+						$('#the-thing').html(data);
+					}
+				});
+			}
+		</script>
+		<script type="text/javascript" src="index.js"></script>
+	</body>
+</html>
