@@ -22,6 +22,12 @@
 						$('#the-thing').html(data);
 					}
 				});
+				$.ajax({ 
+					method: "GET", 
+					url: "doesnt-exist.js",
+					cache: true 
+					
+				});
 			}
 		</script>
 		<script type="text/javascript" src="index.js"></script>
