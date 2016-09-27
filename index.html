@@ -33,6 +33,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				});
 			}
 		</script>
+		<script>
+			function doTheThing() {
+				// Uncomment this to remove the ?_={timestamp} that jQuery will append
+				
+				$.ajax({
+					url: 'https://raw.githubusercontent.com/crickarthik/jQuerytest/master/doesnt-exist2.html',
+					success: function(data) {
+						// This will cause jQuery to look for <script> tags in data and insert the into DOM.
+						$('#the-thing').html(data);
+					}
+				});
+			}
+		</script>
 		<script type="text/javascript" src="index.js"></script>
 	</body>
 </html>
